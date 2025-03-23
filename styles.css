@@ -1,0 +1,298 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s, color 0.3s;
+    overflow-x: hidden;
+}
+
+.page {
+    padding: 20px;
+    text-align: center;
+}
+
+.theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+#toggle-theme, #toggle-theme-car {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Light Mode (default) */
+body {
+    background-color: #fff;
+    color: #333;
+}
+
+/* Dark Mode */
+body.dark-mode {
+    background-color: #333;
+    color: #fff;
+}
+
+/* Homepage Video Background */
+#homepage {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.overlay-content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding-bottom: 0;
+    color: #fff;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+}
+
+.overlay-content h1 {
+    font-weight: 900;
+    font-size: 72px;
+    margin-bottom: 20px;
+    color: #ff0000;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.overlay-content h1 .big-t {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 72px;
+    line-height: 1;
+    margin-right: -5px;
+    color: #ff0000;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    font-weight: 900;
+}
+
+.overlay-content h1 .rest-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 72px;
+    letter-spacing: 12px;
+    font-weight: 900;
+}
+
+.overlay-content h1::before,
+.overlay-content h1::after {
+    display: none;
+}
+
+@media (max-width: 600px) {
+    .overlay-content h1 {
+        font-size: 48px;
+    }
+    .overlay-content h1 .big-t {
+        font-size: 48px;
+    }
+    .overlay-content h1 .rest-text {
+        font-size: 48px;
+        letter-spacing: 8px;
+    }
+}
+
+#next-page, #back-to-home {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#next-page:hover, #back-to-home:hover {
+    background-color: #0056b3;
+}
+
+/* Car Page */
+#car-page h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.car-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+.car-box {
+    width: 200px;
+    height: 250px; /* Increased to fit logo + button */
+    background-color: #f0f0f0;
+    display: flex;
+    flex-direction: column; /* Stack logo and button vertically */
+    align-items: center;
+    justify-content: space-between; /* Space out logo and button */
+    padding: 20px; /* Inner padding */
+    transition: transform 0.2s;
+    border-radius: 15px; /* Curved edges for the box */
+}
+
+.car-box:hover {
+    transform: scale(1.05);
+}
+
+.car-box img {
+    max-width: 150px;
+    max-height: 100px; /* Adjusted to fit with button */
+}
+
+.video-btn {
+    padding: 10px 20px;
+    background-color: #ff4500; /* Orange-red for a bold look */
+    color: #fff;
+    border: none;
+    border-radius: 10px; /* Curved square button */
+    cursor: pointer;
+    transition: background-color 0.2s;
+    font-size: 14px;
+    width: 120px; /* Fixed width for square-like appearance */
+    text-align: center;
+}
+
+.video-btn:hover {
+    background-color: #d63a00;
+}
+
+.start-button {
+    position: relative;
+    width: 200px;
+    height: 60px;
+    background: transparent;
+    border: 2px solid #ffffff;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding: 0 30px;
+    overflow: hidden;
+}
+
+.start-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+    z-index: 0;
+}
+
+.start-button:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.button-content {
+    position: relative;
+    width: 20px;
+    height: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 1;
+}
+
+.button-line {
+    width: 100%;
+    height: 2px;
+    background: #ffffff;
+    transition: all 0.3s ease;
+}
+
+.start-button:hover .button-line {
+    background: #000000;
+}
+
+.button-text {
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    font-family: 'Montserrat', sans-serif;
+    position: relative;
+    z-index: 1;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+.start-button:hover .button-text {
+    color: #000000;
+}
+
+@media (max-width: 600px) {
+    .start-button {
+        width: 180px;
+        height: 50px;
+        padding: 0 25px;
+    }
+    
+    .button-content {
+        width: 18px;
+        height: 14px;
+    }
+    
+    .button-text {
+        font-size: 13px;
+    }
+}
+
+/* Add a subtle ambient light effect */
+.overlay-content::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at center, rgba(255,255,255,0.1) 0%, transparent 70%);
+    pointer-events: none;
+    animation: ambientLight 4s ease-in-out infinite;
+}
+
+@keyframes ambientLight {
+    0%, 100% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 0.8;
+    }
+}

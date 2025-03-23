@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TorqueTube - Video Gallery</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="homepage" class="page">
+        <video id="bg-video" autoplay muted loop>
+            <source src="fro.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="overlay-content">
+            <h1><span class="big-t">T</span><span class="rest-text">orqueTube</span></h1>
+            <a href="cars.html"><button id="start-engine" class="start-button">
+                <span class="button-content">
+                    <span class="button-line"></span>
+                    <span class="button-line"></span>
+                    <span class="button-line"></span>
+                </span>
+                <span class="button-text">START</span>
+            </button></a>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+
+    <style>
+        /* Add Tata Motors background styling */
+        body {
+            background: linear-gradient(135deg, #ffffff, #f0f0f0);
+        }
+
+        #bg-video {
+            opacity: 0.8;
+            filter: contrast(110%) saturate(110%);
+        }
+
+        .overlay-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #d84545;
+            text-shadow: 0 0 20px rgba(216, 69, 69, 0.3);
+            font-size: 3.5em;
+            margin-bottom: 40px;
+            letter-spacing: 4px;
+            position: relative;
+            font-weight: 900;
+        }
+
+        h1::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #d84545, transparent);
+        }
+    </style>
+</body>
+</html>
